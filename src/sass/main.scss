@@ -1,0 +1,165 @@
+@import "utils/variables";
+@import "utils/functions";
+@import "utils/mixins";
+@import "utils/extensions";
+
+@import "base/base";
+@import "base/display";
+@import "base/typography";
+
+@import "layout/container";
+
+@import "pages/home";
+
+@import "https://fonts.googleapis.com/css?family=Lexend+Deca:400|Big+Shoulders+Display:700";
+
+/**
+
+
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan:hsl(179, 100%, 13%);/
+ */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 50px;
+  @media (min-width: 992px) {
+    position: absolute;
+    bottom: 50px;
+  }
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $very-light-gray;
+}
+.main {
+  margin: 88px 24px;
+  @media (min-width: 992px) {
+    width: 920px;
+  }
+}
+
+.bg {
+  &-bright-orange {
+    background-color: $bright-orange;
+  }
+
+  &-dark-cyan {
+    background-color: $dark-cyan;
+  }
+
+  &-very-dark-cyan {
+    background-color: $very-dark-cyan;
+  }
+}
+
+.section {
+  padding: 49px;
+}
+
+.grid-1-2 {
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.grid-1-1 {
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.text-white {
+  color: white;
+}
+
+.title {
+  font-family: 'Big Shoulders Display', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  text-transform: uppercase;
+  color: $very-light-gray;
+
+  margin-top: 35px;
+}
+
+.content {
+  font-family: 'Lexend Deca', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+
+  @media (min-width: 992px) {
+    margin-bottom: 83px;
+  }
+
+  /* or 167% */
+
+  color: $transparent-white;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+}
+
+.border-radius {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.btn {
+  background: $very-light-gray;
+  border-radius: 25px;
+  height: 48px;
+  width: 146px;
+  left: 0px;
+  top: 0px;
+  text-decoration: none;
+  font-family: 'Lexend Deca', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  padding: 11px 31.5px 12px;
+
+  &:hover{
+    background-color: transparent;
+    color: white;
+    border: solid white 2px;
+  }
+}
+
+.btn--bright-orange {
+  color: $bright-orange;
+}
+
+.btn--dark-cyan {
+
+  color: $dark-cyan;
+}
+
+.btn--very-dark-cyan {
+  color: $very-dark-cyan;
+
+}
