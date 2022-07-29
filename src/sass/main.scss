@@ -11,20 +11,17 @@
 
 @import "pages/home";
 
-@import "https://fonts.googleapis.com/css?family=Lexend+Deca:400|Big+Shoulders+Display:700";
+@import "https://fonts.googleapis.com/css?family=Kumbh+Sans:400,700";
 
-/**
-
-
-$bright-orange: hsl(31, 77%, 52%);
-$dark-cyan: hsl(184, 100%, 22%);
-$very-dark-cyan:hsl(179, 100%, 13%);/
- */
 
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Kumbh Sans', serif;
+  font-style: normal;
+  //border: 1px solid red;
 }
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -39,127 +36,111 @@ $very-dark-cyan:hsl(179, 100%, 13%);/
   color: hsl(228, 45%, 44%);
 }
 
-.body{
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  background-color: $very-light-gray;
-}
-.main {
-  margin: 88px 24px;
+  background-color: $dark-cyan;
+  background-image: url("src/images/bg-pattern-top.svg"), url("src/images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+
+  background-position: top -150px left -200px, bottom -150px right -200px;
+  background-size: 80%, 80%;
   @media (min-width: 992px) {
-    width: 920px;
+    background-position: top -400px left -400px, bottom -400px right -400px;
+    background-size: 65%, 65%;
   }
 }
 
-.bg {
-  &-bright-orange {
-    background-color: $bright-orange;
+.card {
+  @media (max-width: 992px) {
+    margin-top: 75px;
   }
-
-  &-dark-cyan {
-    background-color: $dark-cyan;
-  }
-
-  &-very-dark-cyan {
-    background-color: $very-dark-cyan;
-  }
-}
-
-.section {
-  padding: 49px;
-}
-
-.grid-1-2 {
-  @media (min-width: 992px) {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-.grid-1-1 {
-  @media (min-width: 992px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.text-white {
-  color: white;
-}
-
-.title {
-  font-family: 'Big Shoulders Display', serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 40px;
-  line-height: 48px;
-
-  text-transform: uppercase;
-  color: $very-light-gray;
-
-  margin-top: 35px;
-}
-
-.content {
-  font-family: 'Lexend Deca', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
-  margin-bottom: 25px;
-  margin-top: 25px;
-
-  @media (min-width: 992px) {
-    margin-bottom: 83px;
-  }
-
-  /* or 167% */
-
-  color: $transparent-white;
-  mix-blend-mode: normal;
-  opacity: 0.75;
-}
-
-.border-radius {
-  border-radius: 8px;
+  background-color: white;
+  height: 374px;
+  width: 350px;
+  box-shadow: 0px 50px 100px -20px rgba(8, 70, 94, 0.504835);
+  border-radius: 15px;
   overflow: hidden;
-}
 
-.btn {
-  background: $very-light-gray;
-  border-radius: 25px;
-  height: 48px;
-  width: 146px;
-  left: 0px;
-  top: 0px;
-  text-decoration: none;
-  font-family: 'Lexend Deca', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 25px;
-  padding: 11px 31.5px 12px;
-
-  &:hover{
-    background-color: transparent;
-    color: white;
-    border: solid white 2px;
+  &__banner {
+    height: 140px;
+    width: 350px;
+    background-image: url("src/images/bg-pattern-card.svg");
   }
-}
 
-.btn--bright-orange {
-  color: $bright-orange;
-}
+  &__user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 
-.btn--dark-cyan {
+    &__img {
+      border: 5px solid #FFFFFF;
+      border-radius: 100px;
+      width: 96px;
+      height: 96px;
+      top: -48px;
+      position: absolute;
+    }
 
-  color: $dark-cyan;
-}
+    &__name {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      margin-top: 72px;
 
-.btn--very-dark-cyan {
-  color: $very-dark-cyan;
+      & > span {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
 
+        color: #6B7082;
+      }
+    }
+
+    &__town {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-align: center;
+      margin-top: 8px;
+      margin-bottom: 28px;
+      color: $dark-gray;
+    }
+  }
+
+  &__user-stats {
+    border-top: 1px solid #E8E9EC;
+    display: flex;
+    padding: 24px 47px 24px 54px;
+
+    & > div {
+      flex: 1;
+    }
+
+    .value {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      color: $very-dark-desaturated-blue;
+    }
+
+    .key {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      letter-spacing: 1.5px;
+      color: $dark-gray;
+    }
+  }
 }
