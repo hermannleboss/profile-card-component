@@ -43,7 +43,7 @@
   flex-direction: column;
   min-height: 100vh;
   background-color: $dark-cyan;
-  background-image: url("src/images/bg-pattern-top.svg"), url("src/images/bg-pattern-bottom.svg");
+  background-image: url("../../public/images/bg-pattern-top.svg"), url("../../public/images/bg-pattern-bottom.svg");
   background-repeat: no-repeat, no-repeat;
 
   background-position: top -150px left -200px, bottom -150px right -200px;
@@ -68,7 +68,7 @@
   &__banner {
     height: 140px;
     width: 350px;
-    background-image: url("src/images/bg-pattern-card.svg");
+    background-image: url("../../public/images/bg-pattern-card.svg");
   }
 
   &__user-info {
